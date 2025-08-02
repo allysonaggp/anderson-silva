@@ -263,7 +263,7 @@ ul {
 
 /* Hero Section */
 .hero {
-    padding: rem 0;
+    padding: 4rem 0;
     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     color: var(--white);
 }
@@ -514,6 +514,7 @@ ul {
 
 .about-text {
     flex: 1;
+    text-align: justify;
 }
 
 @media (min-width: 768px) {

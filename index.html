@@ -1,112 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prof. Anderson Silva | Portfólio Acadêmico</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Custom animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-fade-in {
-            animation: fadeIn 1s ease-out forwards;
-        }
-        
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-400 { animation-delay: 0.4s; }
-        
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: #3b82f6;
-            border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: #2563eb;
-        }
-        
-        /* Project card hover effect */
-        .project-card {
-            transition: all 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-    </style>
 </head>
-<body class="bg-gray-50 font-sans antialiased">
+
+<body>
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center space-x-4">
-                    <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl">AS</div>
-                    <span class="font-semibold text-gray-900 text-lg">Prof. Anderson Silva</span>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <div class="nav-logo">AS</div>
+                    <span class="nav-name">Prof. Anderson Silva</span>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-blue-600 font-medium">Início</a>
-                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition">Sobre</a>
-                    <a href="#projects" class="text-gray-600 hover:text-blue-600 transition">Projetos</a>
-                    <a href="#publications" class="text-gray-600 hover:text-blue-600 transition">Publicações</a>
-                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">Contato</a>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link active">Início</a>
+                    <a href="#about" class="nav-link">Sobre</a>
+                    <a href="#projects" class="nav-link">Projetos</a>
+                    <a href="#publications" class="nav-link">Publicações</a>
+                    <a href="#contact" class="nav-link">Contato</a>
                 </div>
-                <div class="md:hidden">
-                    <button id="menu-toggle" class="text-gray-600 focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
+                <div class="mobile-menu-toggle">
+                    <button id="menu-toggle" class="menu-button">
+                        <i class="fas fa-bars"></i>
                     </button>
                 </div>
             </div>
         </div>
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
-            <a href="#home" class="block py-2 text-blue-600 font-medium">Início</a>
-            <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600 transition">Sobre</a>
-            <a href="#projects" class="block py-2 text-gray-600 hover:text-blue-600 transition">Projetos</a>
-            <a href="#publications" class="block py-2 text-gray-600 hover:text-blue-600 transition">Publicações</a>
-            <a href="#contact" class="block py-2 text-gray-600 hover:text-blue-600 transition">Contato</a>
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#home" class="mobile-menu-link active">Início</a>
+            <a href="#about" class="mobile-menu-link">Sobre</a>
+            <a href="#projects" class="mobile-menu-link">Projetos</a>
+            <a href="#publications" class="mobile-menu-link">Publicações</a>
+            <a href="#contact" class="mobile-menu-link">Contato</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="py-20 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Prof. Anderson Silva</h1>
-                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Educador, Pesquisador e Inovador</h2>
-                    <p class="text-lg mb-8 opacity-90">Compartilhando conhecimento e projetos acadêmicos que transformam a educação.</p>
-                    <div class="flex space-x-4">
-                        <a href="#projects" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300 shadow-lg">Ver Projetos</a>
-                        <a href="#contact" class="border-2 border-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-600 transition duration-300">Entrar em Contato</a>
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Prof. Anderson Silva</h1>
+                    <h2>Educador, Pesquisador e Inovador</h2>
+                    <p>Compartilhando conhecimento e projetos acadêmicos que transformam a educação.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="primary-button">Ver Projetos</a>
+                        <a href="#contact" class="secondary-button">Entrar em Contato</a>
                     </div>
                 </div>
-                <div class="md:w-1/2 animate-fade-in delay-200">
-                    <div class="relative">
-                        <div class="w-64 h-64 md:w-80 md:h-80 bg-white rounded-full mx-auto overflow-hidden shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" 
-                                 alt="Professor Anderson Silva" 
-                                 class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute -bottom-4 -right-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded-lg font-bold shadow-lg">
-                            <i class="fas fa-graduation-cap mr-2"></i> PhD
-                        </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="./anderson-silva2.png" alt="Professor Anderson Silva">
                     </div>
                 </div>
             </div>
@@ -114,80 +65,92 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 animate-fade-in">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Sobre o Professor</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">Conheça a trajetória acadêmica e profissional do Prof. Anderson Silva</p>
+    <section id="about" class="about">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Sobre o Professor</h2>
+                <div class="divider"></div>
+                <p>Conheça a trajetória acadêmica e profissional do Prof. Anderson Silva</p>
             </div>
-            
-            <div class="flex flex-col md:flex-row items-center animate-fade-in delay-100">
-                <div class="md:w-1/3 mb-10 md:mb-0">
-                    <div class="bg-gray-100 p-8 rounded-xl shadow-md">
-                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Formação Acadêmica</h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <div class="bg-blue-100 p-2 rounded-full mr-4">
-                                    <i class="fas fa-graduation-cap text-blue-600"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium text-gray-900">Doutorado em Educação</h4>
-                                    <p class="text-gray-600 text-sm">Universidade Federal - 2015</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="bg-blue-100 p-2 rounded-full mr-4">
-                                    <i class="fas fa-book text-blue-600"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium text-gray-900">Mestrado em Metodologias de Ensino</h4>
-                                    <p class="text-gray-600 text-sm">Universidade Estadual - 2010</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="bg-blue-100 p-2 rounded-full mr-4">
-                                    <i class="fas fa-university text-blue-600"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium text-gray-900">Licenciatura em Pedagogia</h4>
-                                    <p class="text-gray-600 text-sm">Faculdade de Educação - 2005</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+
+            <div class="about-content">
+                <div class="education-card">
+                    <h3>Formação Acadêmica</h3>
+                    <ul class="education-list">
+                        <li class="education-item">
+                            <div class="education-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h4>Estudante de Engenharia de Pesca</h4>
+                                <p>Universidade Federal</p>
+                            </div>
+                        </li>
+                        <li class="education-item">
+                            <div class="education-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <h4>Mestrado em Meteorologia</h4>
+                                <p>Universidade Federal de Alagoas (UAFAL)</p>
+                            </div>
+                        </li>
+                        <li class="education-item">
+                            <div class="education-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div>
+                                <h4>Licenciatura em Geografia</h4>
+                                <p>Instituto Federal de Pernambuco (IFPE)</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                
-                <div class="md:w-2/3 md:pl-12">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Minha Jornada na Educação</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Com mais de 15 anos de experiência na área educacional, dedico minha carreira ao desenvolvimento de metodologias inovadoras de ensino que promovam a aprendizagem significativa. Minha abordagem pedagógica combina teoria e prática, sempre buscando formas criativas de engajar os estudantes.
+
+                <div class="about-text">
+                    <h3>Professor, pesquisador e artista interdisciplinar</h3>
+                    <p>
+                        Atuo como educador da rede pública estadual de Pernambuco, com atuação nas áreas de Geografia,
+                        Filosofia,
+                        Artes e aprofundamentos interdisciplinares. Sua trajetória profissional é marcada pela
+                        integração entre saberes acadêmicos e populares, com foco na inovação educacional, na
+                        valorização cultural e na sustentabilidade ambiental.
                     </p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Atualmente, atuo como professor titular na Faculdade de Educação, onde lidero projetos de pesquisa sobre tecnologias educacionais e metodologias ativas. Minha paixão é transformar a sala de aula em um espaço dinâmico de construção coletiva do conhecimento.
+                    <p>
+                        Com mais de uma década de experiência docente, desenvolvo e coordeno projetos que articulam
+                        ciência, arte e tecnologia, promovendo práticas pedagógicas interdisciplinares.
                     </p>
-                    
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-                        <div class="bg-blue-50 p-4 rounded-lg text-center">
-                            <div class="text-blue-600 text-3xl mb-2">
+                    <p>
+                        Sou fundador do Centro Criativo de ÁS, espaço voltado à produção de conhecimento
+                        interdisciplinar
+                        nas áreas de educação, meteorologia, geotecnologias, arte e consultoria. Sempre atuando em meio
+                        acadêmico e
+                        comunitário refletindo o compromisso com a transformação social por meio da educação crítica,
+                        criativa e emancipadora.
+
+                    </p>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
                                 <i class="fas fa-chalkboard-teacher"></i>
                             </div>
-                            <h4 class="font-bold text-gray-900">+5.000</h4>
-                            <p class="text-gray-600 text-sm">Alunos formados</p>
+                            <h4>+1.000</h4>
+                            <p>Alunos formados</p>
                         </div>
-                        <div class="bg-blue-50 p-4 rounded-lg text-center">
-                            <div class="text-blue-600 text-3xl mb-2">
+                        <div class="stat-card">
+                            <div class="stat-icon">
                                 <i class="fas fa-project-diagram"></i>
                             </div>
-                            <h4 class="font-bold text-gray-900">+120</h4>
-                            <p class="text-gray-600 text-sm">Projetos realizados</p>
+                            <h4>+50</h4>
+                            <p>Projetos realizados</p>
                         </div>
-                        <div class="bg-blue-50 p-4 rounded-lg text-center">
-                            <div class="text-blue-600 text-3xl mb-2">
+                        <div class="stat-card">
+                            <div class="stat-icon">
                                 <i class="fas fa-award"></i>
                             </div>
-                            <h4 class="font-bold text-gray-900">18</h4>
-                            <p class="text-gray-600 text-sm">Prêmios acadêmicos</p>
+                            <h4>10</h4>
+                            <p>Prêmios acadêmicos</p>
                         </div>
                     </div>
                 </div>
@@ -196,221 +159,225 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 animate-fade-in">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Projetos Acadêmicos</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">Conheça os principais projetos desenvolvidos e coordenados</p>
+    <section id="projects" class="projects">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Projetos Acadêmicos</h2>
+                <div class="divider"></div>
+                <p>Conheça os principais projetos desenvolvidos e coordenados</p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md animate-fade-in delay-100">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
-                             alt="Educação Inclusiva" 
-                             class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+                            alt="Educação Inclusiva">
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <span class="bg-blue-100 text-blue-600 text-xs font-semibold px-3 py-1 rounded-full">Em Andamento</span>
-                            <span class="ml-auto text-gray-500 text-sm">2022 - Presente</span>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="status-badge ongoing">Em Andamento</span>
+                            <span class="project-date">2022 - Presente</span>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Educação Inclusiva 4.0</h3>
-                        <p class="text-gray-600 mb-4">Desenvolvimento de metodologias e tecnologias para inclusão de estudantes com necessidades especiais no ensino regular.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Tecnologias Educacionais</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Inclusão</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Acessibilidade</span>
+                        <h3>Educação Inclusiva 4.0</h3>
+                        <p>Desenvolvimento de metodologias e tecnologias para inclusão de estudantes com necessidades
+                            especiais no ensino regular.</p>
+                        <div class="project-tags">
+                            <span class="tag">Tecnologias Educacionais</span>
+                            <span class="tag">Inclusão</span>
+                            <span class="tag">Acessibilidade</span>
                         </div>
-                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
-                            Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="#" class="project-link">
+                            Saiba mais <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Project 2 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md animate-fade-in delay-200">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                             alt="Gamificação na Educação" 
-                             class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Gamificação na Educação">
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <span class="bg-green-100 text-green-600 text-xs font-semibold px-3 py-1 rounded-full">Concluído</span>
-                            <span class="ml-auto text-gray-500 text-sm">2019 - 2021</span>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="status-badge completed">Concluído</span>
+                            <span class="project-date">2019 - 2021</span>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Gamificação na Aprendizagem</h3>
-                        <p class="text-gray-600 mb-4">Implementação de elementos de jogos em contextos educacionais para aumentar o engajamento e a motivação dos alunos.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Gamificação</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Engajamento</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Metodologias Ativas</span>
+                        <h3>Gamificação na Aprendizagem</h3>
+                        <p>Implementação de elementos de jogos em contextos educacionais para aumentar o engajamento e a
+                            motivação dos alunos.</p>
+                        <div class="project-tags">
+                            <span class="tag">Gamificação</span>
+                            <span class="tag">Engajamento</span>
+                            <span class="tag">Metodologias Ativas</span>
                         </div>
-                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
-                            Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="#" class="project-link">
+                            Saiba mais <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Project 3 -->
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md animate-fade-in delay-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                             alt="Inteligência Artificial" 
-                             class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Inteligência Artificial">
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <span class="bg-purple-100 text-purple-600 text-xs font-semibold px-3 py-1 rounded-full">Destaque</span>
-                            <span class="ml-auto text-gray-500 text-sm">2020 - 2022</span>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="status-badge featured">Destaque</span>
+                            <span class="project-date">2020 - 2022</span>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">IA na Personalização do Ensino</h3>
-                        <p class="text-gray-600 mb-4">Uso de inteligência artificial para criar planos de aprendizagem personalizados baseados no perfil de cada estudante.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Inteligência Artificial</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Personalização</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">Tecnologia</span>
+                        <h3>IA na Personalização do Ensino</h3>
+                        <p>Uso de inteligência artificial para criar planos de aprendizagem personalizados baseados no
+                            perfil de cada estudante.</p>
+                        <div class="project-tags">
+                            <span class="tag">Inteligência Artificial</span>
+                            <span class="tag">Personalização</span>
+                            <span class="tag">Tecnologia</span>
                         </div>
-                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
-                            Saiba mais <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="#" class="project-link">
+                            Saiba mais <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            
-            <div class="text-center mt-12 animate-fade-in delay-400">
-                <a href="#" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-300 shadow-lg">
-                    <i class="fas fa-folder-open mr-2"></i> Ver Todos os Projetos
+
+            <div class="text-center">
+                <a href="#" class="cta-button">
+                    <i class="fas fa-folder-open"></i> Ver Todos os Projetos
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Publications Section -->
-    <section id="publications" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 animate-fade-in">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Publicações</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">Artigos, livros e pesquisas publicadas</p>
+    <section id="publications" class="publications">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Publicações</h2>
+                <div class="divider"></div>
+                <p>Artigos, livros e pesquisas publicadas</p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="publications-grid">
                 <!-- Publication 1 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-md animate-fade-in delay-100">
-                    <div class="flex items-start mb-4">
-                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                            <i class="fas fa-book-open text-blue-600 text-xl"></i>
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <div class="publication-icon">
+                            <i class="fas fa-book-open"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-1">Metodologias Ativas na Educação Contemporânea</h3>
-                            <p class="text-gray-500 text-sm">2022 | Editora Educacional</p>
+                            <h3>Metodologias Ativas na Educação Contemporânea</h3>
+                            <p class="publication-meta">2022 | Editora Educacional</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4">Livro que aborda estratégias inovadoras para engajar estudantes no processo de aprendizagem, com casos práticos e resultados mensuráveis.</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">ISBN: 978-85-1234-567-8</span>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
-                            <i class="fas fa-download mr-1"></i> Download
+                    <p>Livro que aborda estratégias inovadoras para engajar estudantes no processo de aprendizagem, com
+                        casos práticos e resultados mensuráveis.</p>
+                    <div class="publication-footer">
+                        <span>ISBN: 978-85-1234-567-8</span>
+                        <a href="#" class="publication-action">
+                            <i class="fas fa-download"></i> Download
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Publication 2 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-md animate-fade-in delay-200">
-                    <div class="flex items-start mb-4">
-                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                            <i class="fas fa-file-alt text-blue-600 text-xl"></i>
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <div class="publication-icon">
+                            <i class="fas fa-file-alt"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-1">O Impacto da Gamificação no Desempenho Acadêmico</h3>
-                            <p class="text-gray-500 text-sm">2021 | Revista de Educação e Tecnologia</p>
+                            <h3>O Impacto da Gamificação no Desempenho Acadêmico</h3>
+                            <p class="publication-meta">2021 | Revista de Educação e Tecnologia</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4">Artigo científico que apresenta os resultados de uma pesquisa longitudinal sobre os efeitos da gamificação em turmas do ensino fundamental.</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">DOI: 10.1234/ret.2021.001</span>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
-                            <i class="fas fa-external-link-alt mr-1"></i> Acessar
+                    <p>Artigo científico que apresenta os resultados de uma pesquisa longitudinal sobre os efeitos da
+                        gamificação em turmas do ensino fundamental.</p>
+                    <div class="publication-footer">
+                        <span>DOI: 10.1234/ret.2021.001</span>
+                        <a href="#" class="publication-action">
+                            <i class="fas fa-external-link-alt"></i> Acessar
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Publication 3 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-md animate-fade-in delay-300">
-                    <div class="flex items-start mb-4">
-                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                            <i class="fas fa-chart-line text-blue-600 text-xl"></i>
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <div class="publication-icon">
+                            <i class="fas fa-chart-line"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-1">Análise de Dados Educacionais para Tomada de Decisão</h3>
-                            <p class="text-gray-500 text-sm">2020 | Congresso Internacional de Educação</p>
+                            <h3>Análise de Dados Educacionais para Tomada de Decisão</h3>
+                            <p class="publication-meta">2020 | Congresso Internacional de Educação</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4">Apresentação de pesquisa sobre como a análise de dados pode melhorar os processos decisórios em instituições de ensino.</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">Evento: CIE 2020</span>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
-                            <i class="fas fa-video mr-1"></i> Assistir
+                    <p>Apresentação de pesquisa sobre como a análise de dados pode melhorar os processos decisórios em
+                        instituições de ensino.</p>
+                    <div class="publication-footer">
+                        <span>Evento: CIE 2020</span>
+                        <a href="#" class="publication-action">
+                            <i class="fas fa-video"></i> Assistir
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Publication 4 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-md animate-fade-in delay-400">
-                    <div class="flex items-start mb-4">
-                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                            <i class="fas fa-laptop-code text-blue-600 text-xl"></i>
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <div class="publication-icon">
+                            <i class="fas fa-laptop-code"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-1">Ferramentas Digitais para Educação Remota</h3>
-                            <p class="text-gray-500 text-sm">2019 | Revista de Tecnologias Educacionais</p>
+                            <h3>Ferramentas Digitais para Educação Remota</h3>
+                            <p class="publication-meta">2019 | Revista de Tecnologias Educacionais</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4">Estudo comparativo das principais plataformas de ensino remoto, com análise de usabilidade e eficácia pedagógica.</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">Vol. 12, No. 3</span>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 text-sm font-medium">
-                            <i class="fas fa-bookmark mr-1"></i> Salvar
+                    <p>Estudo comparativo das principais plataformas de ensino remoto, com análise de usabilidade e
+                        eficácia pedagógica.</p>
+                    <div class="publication-footer">
+                        <span>Vol. 12, No. 3</span>
+                        <a href="#" class="publication-action">
+                            <i class="fas fa-bookmark"></i> Salvar
                         </a>
                     </div>
                 </div>
             </div>
-            
-            <div class="text-center mt-12 animate-fade-in delay-500">
-                <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
-                    <i class="fas fa-list-ul mr-2"></i> Ver Todas as Publicações
+
+            <div class="text-center">
+                <a href="#" class="text-link">
+                    <i class="fas fa-list-ul"></i> Ver Todas as Publicações
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-20 bg-gradient-to-r from-indigo-500 to-blue-600 text-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 animate-fade-in">
-                <h2 class="text-3xl font-bold mb-4">Depoimentos</h2>
-                <div class="w-20 h-1 bg-white mx-auto mb-6"></div>
-                <p class="max-w-3xl mx-auto opacity-90">O que alunos e colegas dizem sobre o trabalho do Prof. Anderson</p>
+    <section class="testimonials">
+        <div class="section-container">
+            <div class="section-header light">
+                <h2>Depoimentos</h2>
+                <div class="divider light"></div>
+                <p>O que alunos e colegas dizem sobre o trabalho do Prof. Anderson</p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="testimonials-grid">
                 <!-- Testimonial 1 -->
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 animate-fade-in delay-100">
-                    <div class="flex items-center mb-6">
-                        <img src="https://randomuser.me/api/portraits/women/43.jpg" 
-                             alt="Maria Souza" 
-                             class="w-12 h-12 rounded-full mr-4 object-cover">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Maria Souza">
                         <div>
-                            <h4 class="font-bold">Maria Souza</h4>
-                            <p class="text-blue-100 text-sm">Ex-aluna, Pedagoga</p>
+                            <h4>Maria Souza</h4>
+                            <p>Ex-aluna, Pedagoga</p>
                         </div>
                     </div>
-                    <p class="italic mb-4">"O Prof. Anderson transformou minha visão sobre educação. Suas aulas eram sempre dinâmicas e cheias de exemplos práticos que eu levo para minha carreira até hoje."</p>
-                    <div class="flex text-yellow-300">
+                    <p class="testimonial-text">"O Prof. Anderson transformou minha visão sobre educação. Suas aulas
+                        eram sempre dinâmicas e cheias de exemplos práticos que eu levo para minha carreira até hoje."
+                    </p>
+                    <div class="testimonial-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -418,20 +385,20 @@
                         <i class="fas fa-star"></i>
                     </div>
                 </div>
-                
+
                 <!-- Testimonial 2 -->
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 animate-fade-in delay-200">
-                    <div class="flex items-center mb-6">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" 
-                             alt="Carlos Mendes" 
-                             class="w-12 h-12 rounded-full mr-4 object-cover">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Mendes">
                         <div>
-                            <h4 class="font-bold">Carlos Mendes</h4>
-                            <p class="text-blue-100 text-sm">Colega de Departamento</p>
+                            <h4>Carlos Mendes</h4>
+                            <p>Colega de Departamento</p>
                         </div>
                     </div>
-                    <p class="italic mb-4">"Trabalhar com o Anderson é sempre uma oportunidade de aprendizado. Sua capacidade de inovar e aplicar novas tecnologias na educação é inspiradora para toda a equipe."</p>
-                    <div class="flex text-yellow-300">
+                    <p class="testimonial-text">"Trabalhar com o Anderson é sempre uma oportunidade de aprendizado. Sua
+                        capacidade de inovar e aplicar novas tecnologias na educação é inspiradora para toda a equipe."
+                    </p>
+                    <div class="testimonial-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -444,28 +411,28 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 animate-fade-in">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Entre em Contato</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-                <p class="text-gray-600 max-w-3xl mx-auto">Estou disponível para palestras, orientações e colaborações em projetos educacionais</p>
+    <section id="contact" class="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Entre em Contato</h2>
+                <div class="divider"></div>
+                <p>Estou disponível para palestras, orientações e colaborações em projetos educacionais</p>
             </div>
-            
-            <div class="flex flex-col md:flex-row gap-12">
-                <div class="md:w-1/2 animate-fade-in delay-100">
-                    <form class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form class="form">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name">
                         </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email">
                         </div>
-                        <div>
-                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Assunto</label>
-                            <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <select id="subject">
                                 <option value="">Selecione um assunto</option>
                                 <option value="palestra">Convite para Palestra</option>
                                 <option value="orientacao">Orientação Acadêmica</option>
@@ -473,75 +440,75 @@
                                 <option value="outro">Outro</option>
                             </select>
                         </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensagem</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"></textarea>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" rows="5"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition duration-300 shadow-lg">
+                        <button type="submit" class="submit-button">
                             Enviar Mensagem
                         </button>
                     </form>
                 </div>
-                
-                <div class="md:w-1/2 animate-fade-in delay-200">
-                    <div class="bg-gray-50 p-8 rounded-xl shadow-md h-full">
-                        <h3 class="text-xl font-bold text-gray-900 mb-6">Informações de Contato</h3>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                                    <i class="fas fa-envelope text-blue-600"></i>
+
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>Informações de Contato</h3>
+
+                        <div class="info-list">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-900">E-mail</h4>
-                                    <p class="text-gray-600">prof.anderson@universidade.edu.br</p>
+                                    <h4>E-mail</h4>
+                                    <p>prof.anderson@universidade.edu.br</p>
                                 </div>
                             </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                                    <i class="fas fa-phone-alt text-blue-600"></i>
+
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-phone-alt"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-900">Telefone</h4>
-                                    <p class="text-gray-600">+55 (11) 98765-4321</p>
+                                    <h4>Telefone</h4>
+                                    <p>+55 (11) 98765-4321</p>
                                 </div>
                             </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-900">Escritório</h4>
-                                    <p class="text-gray-600">Faculdade de Educação, Sala 305<br>Universidade Federal<br>São Paulo - SP</p>
+                                    <h4>Escritório</h4>
+                                    <p>Faculdade de Educação, Sala 305<br>Universidade Federal<br>São Paulo - SP</p>
                                 </div>
                             </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                                    <i class="fas fa-clock text-blue-600"></i>
+
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-clock"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-900">Horário de Atendimento</h4>
-                                    <p class="text-gray-600">Segunda a sexta, 14h às 18h<br>Agendamento prévio necessário</p>
+                                    <h4>Horário de Atendimento</h4>
+                                    <p>Segunda a sexta, 14h às 18h<br>Agendamento prévio necessário</p>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="mt-8">
-                            <h4 class="font-medium text-gray-900 mb-4">Redes Sociais</h4>
-                            <div class="flex space-x-4">
-                                <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-200 transition">
+
+                        <div class="social-links">
+                            <h4>Redes Sociais</h4>
+                            <div class="social-icons">
+                                <a href="#">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-200 transition">
+                                <a href="#">
                                     <i class="fab fa-twitter"></i>
                                 </a>
-                                <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-200 transition">
+                                <a href="#">
                                     <i class="fab fa-researchgate"></i>
                                 </a>
-                                <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-200 transition">
+                                <a href="#">
                                     <i class="fab fa-google-scholar"></i>
                                 </a>
                             </div>
@@ -553,63 +520,64 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">AS</div>
-                        <span class="font-semibold">Prof. Anderson Silva</span>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo-container">
+                        <div class="footer-logo">AS</div>
+                        <span>Prof. Anderson Silva</span>
                     </div>
-                    <p class="text-gray-400 text-sm">Educador, pesquisador e inovador na área de metodologias de ensino e tecnologias educacionais.</p>
+                    <p>Educador, pesquisador e inovador na área de metodologias de ensino e tecnologias educacionais.
+                    </p>
                 </div>
-                
-                <div>
-                    <h4 class="font-semibold text-lg mb-4">Navegação</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Início</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition">Sobre</a></li>
-                        <li><a href="#projects" class="text-gray-400 hover:text-white transition">Projetos</a></li>
-                        <li><a href="#publications" class="text-gray-400 hover:text-white transition">Publicações</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contato</a></li>
+
+                <div class="footer-links">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#projects">Projetos</a></li>
+                        <li><a href="#publications">Publicações</a></li>
+                        <li><a href="#contact">Contato</a></li>
                     </ul>
                 </div>
-                
-                <div>
-                    <h4 class="font-semibold text-lg mb-4">Links Úteis</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Lattes</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Universidade</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Grupo de Pesquisa</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Materiais Didáticos</a></li>
+
+                <div class="footer-links">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="#">Lattes</a></li>
+                        <li><a href="#">Universidade</a></li>
+                        <li><a href="#">Grupo de Pesquisa</a></li>
+                        <li><a href="#">Materiais Didáticos</a></li>
                     </ul>
                 </div>
-                
-                <div>
-                    <h4 class="font-semibold text-lg mb-4">Newsletter</h4>
-                    <p class="text-gray-400 text-sm mb-4">Assine para receber atualizações sobre projetos e publicações.</p>
-                    <form class="flex">
-                        <input type="email" placeholder="Seu e-mail" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
-                        <button type="submit" class="bg-blue-600 px-4 py-2 rounded-r-lg hover:bg-blue-700 transition">
+
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Assine para receber atualizações sobre projetos e publicações.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu e-mail">
+                        <button type="submit">
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </form>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">© 2023 Prof. Anderson Silva. Todos os direitos reservados.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-400 hover:text-white transition">
+
+            <div class="footer-bottom">
+                <p>© 2023 Prof. Anderson Silva. Todos os direitos reservados.</p>
+                <div class="footer-social">
+                    <a href="#">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
+                    <a href="#">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
+                    <a href="#">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
+                    <a href="#">
                         <i class="fab fa-researchgate"></i>
                     </a>
                 </div>
@@ -618,79 +586,11 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-blue-700">
+    <button id="back-to-top" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script>
-        // Mobile menu toggle
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                }
-            });
-        });
-
-        // Back to top button
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-                backToTopButton.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopButton.classList.remove('opacity-100', 'visible');
-                backToTopButton.classList.add('opacity-0', 'invisible');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Add animation classes when elements come into view
-        const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.animate-fade-in');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementPosition < windowHeight - 100) {
-                    element.classList.add('animate-fade-in');
-                }
-            });
-        };
-
-        // Run once on page load
-        animateOnScroll();
-        
-        // Run on scroll
-        window.addEventListener('scroll', animateOnScroll);
-    </script>
+    <script src="./script.js"></script>
 </body>
+
 </html>

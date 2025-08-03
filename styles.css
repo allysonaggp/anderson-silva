@@ -1,8 +1,11 @@
 /* Base Styles */
 :root {
-    --primary-color: #3b82f6;
-    --primary-dark: #2563eb;
-    --secondary-color: #6366f1;
+    --primary-color: #1c581a;
+    --primary-dark: #8f172b;
+    /* --primary-color: #3b82f6;
+    --primary-dark: #2563eb; */
+    /* --secondary-color: #6366f1; */
+    --secondary-color: #51bd4694;
     --accent-color: #f59e0b;
     --text-dark: #1f2937;
     --text-medium: #4b5563;
@@ -23,6 +26,7 @@
     --rounded-lg: 0.5rem;
     --rounded-xl: 0.75rem;
     --rounded-full: 9999px;
+   
 }
 
 * {

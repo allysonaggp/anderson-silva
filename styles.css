@@ -600,7 +600,9 @@ ul {
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
+    
 }
+
 
 .project-card:hover {
     transform: translateY(-0.625rem);
@@ -610,6 +612,7 @@ ul {
 .project-image {
     height: 12rem;
     overflow: hidden;
+    
 }
 
 .project-image img {
@@ -694,6 +697,8 @@ ul {
     align-items: center;
     transition: color 0.3s ease;
 }
+
+    
 
 .project-link:hover {
     color: var(--primary-dark);
